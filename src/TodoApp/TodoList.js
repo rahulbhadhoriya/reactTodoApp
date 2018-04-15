@@ -4,15 +4,18 @@ class Todolist extends Component {
     constructor(props) {
         super(props)
     }
+    Remove = (e) => {
+        this.props.onDelete(e);
+    }
     render() {
-        let createItem = (itemText) => {
+        let createItem = (itemText, i) => {
             return (
-                <TodolistItem>{itemText}</TodolistItem>
+                <TodolistItem key={i} value={i} onRemove={this.Remove}>{itemText}</TodolistItem>
             )
         }
         return (
             <ul className="TodoList">
-                {this.props.items.map(createItem)}
+                {this.props.items.map(createItem, this).reverse()}
             </ul>
         )
     }
