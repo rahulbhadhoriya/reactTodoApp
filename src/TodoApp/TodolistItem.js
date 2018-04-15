@@ -10,8 +10,8 @@ class TodolistItem extends Component {
         });
         this.props.children.isDone = e.target.checked;
     }
-    RemoveHandler = () => {
-        this.props.onRemove(this.props.value);
+    CompleteHandler = () => {
+        this.props.onDone(this.props.value);
     }
     render() {
         let _style = "line-through";
@@ -19,7 +19,8 @@ class TodolistItem extends Component {
             _style = "none";
         return (
             <li data-id={this.props.value}
-                key={this.props.value} onClick={this.RemoveHandler}>
+                key={this.props.value} onClick={this.CompleteHandler}>
+                {/* first tried to give checkbox functionality was working fine. */}
                 {/* <button type="button" className="close pull-right" aria-hidden="true" >
                     &times;</button> */}
                 {/* <input type="checkbox" onChange={this.changeHandler} defaultChecked={this.props.children.isDone}  /> */}

@@ -1,0 +1,21 @@
+.header-section{     padding: 12px 0; background: #c7c7c7; }
+.header-section h4{ font-size: 22px; font-weight: bold; }
+
+.body-section{
+   padding: 20px 0; background: #e2e2e2;
+}
+
+.TodoList li{ 
+    padding: 10px;
+    border-bottom:1px solid #eee; background: #fff;
+}
+
+.active-list{ background: #999; color: #fff; padding: 10px; border-bottom:1px solid #fff; }
+
+.round-button{
+    border-radius: 50% !important;
+    height: 45px;
+    width: 45px;
+}
+
+.search-bar{ padding: 0px 0 10px 0; }

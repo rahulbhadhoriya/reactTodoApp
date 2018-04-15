@@ -7,8 +7,6 @@ class TodoForm extends Component {
         this.state = {
             item: ''
         };
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // this.onChange = this.onChange.bind(this);
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -24,17 +22,21 @@ class TodoForm extends Component {
             item: e.target.value
         });
     }
+
     render() {
-        let styles = {
-            "float": "left",
-            "marginLeft": "5px"
-        }
         return (
-            <div className="row">
+            <div className="form-horizontal">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="form-group col-sm-10">
-                        <input type="text" className="TodoField form-control" ref='item' onChange={this.onChange} value={this.state.item} />
-                        <input type="submit" className="btn btn-default" style={styles} value='Add' />
+                    <div className="form-group">
+                        <div className="col-xs-10">
+                            <input type="text" className="form-control" ref='item' onChange={this.onChange} value={this.state.item} />
+                        </div>
+                        <div className="col-xs-2">
+                            <button type="submit" className="btn btn-default round-button">
+                                <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
                     </div>
                 </form>
             </div>
